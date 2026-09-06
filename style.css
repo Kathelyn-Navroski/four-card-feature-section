@@ -1,0 +1,156 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  background-color: #ffffff;
+  color: #4c4e61;
+  font-family: 'Outfit', sans-serif;
+  text-align: center;
+  overflow-x: hidden;
+}
+
+/* Fundo Aurora claro e sutil */
+.aurora-back {
+  position: fixed;
+  z-index: -1;
+  inset: 0;
+  background:
+    radial-gradient(circle at 10% 20%, rgba(17, 231, 228, 0.267), transparent 40%),
+    radial-gradient(circle at 90% 80%, rgba(5, 108, 241, 0.5), transparent 40%),
+    radial-gradient(circle at 85% 15%, rgba(255, 1, 1, 0.5), transparent 35%),
+    radial-gradient(circle at 15% 85%, rgba(255, 196, 0, 0.521), transparent 45%);
+}
+
+.page-content {
+  width: min(100% - 40px, 1110px);
+  margin: 0 auto;
+  padding: 80px 0;
+}
+
+/* Cabeçalho */
+.titulo-principal {
+  max-width: 540px;
+  margin: 0 auto 64px auto;
+}
+
+.titulo-top-normal {
+  display: block;
+  font-size: clamp(1.5rem, 3vw, 2.25rem);
+  font-weight: 200;
+  color: #4c4e61;
+  line-height: 1.2;
+}
+
+.titulo-top-bold {
+  display: block;
+  font-size: clamp(1.5rem, 3vw, 2.25rem);
+  font-weight: 600;
+  color: #4c4e61;
+  line-height: 1.2;
+}
+
+.top-text {
+  margin-top: 16px;
+  font-size: 0.95rem;
+  color: #a3a8b0;
+  line-height: 1.6;
+}
+
+/* Layout de 3 Colunas Centralizadas */
+.container-cards {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+
+.coluna-central {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+/* Cards Brancos com Sombra Suave */
+.card {
+  display: flex;
+  flex-direction: column;
+  width: 350px;
+  min-height: 250px;
+  padding: 32px;
+  background-color: rgba(255, 255, 255, 0.6); /* 60% de opacidade branca */
+  backdrop-filter: blur(12px); /* Desfoca suavemente as cores do fundo atrás do card */
+  -webkit-backdrop-filter: blur(12px); /* Suporte para navegadores Safari */
+  border-radius: 8px;
+  box-shadow: 0 15px 30px rgba(76, 78, 97, 0.08);
+  text-align: left;
+  transition: transform 180ms ease, box-shadow 180ms ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 35px rgba(76, 78, 97, 0.15);
+}
+
+/* Borda colorida superior dos cards */
+.card-supervisor { border-top: 4px solid hsl(180, 62%, 55%); }
+.card-team-builder { border-top: 4px solid hsl(0, 78%, 62%); }
+.card-karma { border-top: 4px solid hsl(34, 97%, 64%); }
+.card-calculator { border-top: 4px solid hsl(212, 86%, 64%); }
+
+.card-titulo {
+  margin-bottom: 8px;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #4c4e61;
+}
+
+.card-texto {
+  font-size: 0.85rem;
+  color: #a3a8b0;
+  line-height: 1.6;
+}
+
+.card-icon {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+  margin-top: auto;
+}
+
+.card-icon img {
+  width: 52px;
+  height: 52px;
+}
+
+
+.creator-name {
+  text-align: center;
+  margin-top: 60px;
+  margin-bottom: 20px;
+  font-size: 15px;
+  color: #FFA500;
+  line-height: 1.6;
+}
+
+.creator-name a {
+  color: #FFA500;            /* Altera a cor do texto do link */
+  text-decoration: none;     /* Remove o sublinhado padrão */
+  font-weight: 600;          /* Mantém um leve destaque em negrito */
+}
+
+/* Efeito visual quando passar o mouse por cima */
+.creator-name a:hover {
+  text-decoration: underline; /* Mostra o sublinhado apenas no hover */
+  color: rgba(255, 69, 0, 1);  /* Muda levemente para um tom azul da sua paleta */
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 950px) {
+  .container-cards {
+    flex-direction: column;
+  }
+}
